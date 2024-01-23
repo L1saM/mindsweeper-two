@@ -19,6 +19,8 @@ const totalCells = 100;
 const totalBombs = 25;
 // Total number of blank spaces + bombs present. 
 const maxScore = totalCells - totalBombs;
+//OR Have the option to let the user win after only evading a certain amount of bombs
+// const maxScore = 20;
 const bombsList = [];
 
 let score = 0;
@@ -91,7 +93,7 @@ function endGame(isVictory) {
     endGameText.innerHTML = 'YOU<br>WON';
     endGameScreen.classList.add('win');
   }
-
+// shows where all the bombs are when the user finishes the game
   revealAllBombs();
   endGameScreen.classList.remove('hidden');
 }

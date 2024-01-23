@@ -21,22 +21,27 @@ body {
 
 /* # Game Panel */
 
+/* title */
 h1 {
   font-size: 58px;
   outline: 8px dotted rgb(34, 6, 37);
   text-align: center;
   padding-bottom: 3px;
+  border: 5px solid  rgb(34, 6, 37);
   text-shadow: 10px 10px 10px rgb(34, 6, 37) ;
+  background-image: url('./images/bg1.jpg');
   
 }
-
+/* "choose" text */
 h2 {
-  padding-top: 15px;
+  padding-top: 10px;
   display: flex;
   justify-content: space-between;
   font-size: 20px;
+  border: 5px solid  rgb(34, 6, 37);
   text-shadow: 6px 6px 6px rgb(34, 6, 37) ;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
+  background-image: url('./images/bg2.jpg');
   
 
 }
@@ -46,16 +51,17 @@ h2 {
   justify-content: space-between;
   font-size: 35px;
   text-shadow: 8px 8px 8px rgb(34, 6, 37) ;
-  outline: 2px dashed  rgb(34, 6, 37);
+  border: 5px solid  rgb(34, 6, 37);
   padding-bottom: 10px;
   padding-left: 4px;
   padding-right: 10px;
+  background-image: url('./images/bg1.jpg');
 }
 
 /* # Game Grid */
 
 .game-board {
-  border: 2px solid rgb(0, 0, 0);
+  border: 8px solid rgb(0, 0, 0);
   position: relative;
   
 }
@@ -64,23 +70,24 @@ h2 {
   height: calc((48px * 10) + 4px);
   display: flex;
   flex-wrap: wrap;
+  background-image: url('./images/bg2.jpg');
 
   
 }
 
 .cell {
-  width: 48px;
-  height: 48px;
+  width: 45.5px;
+  height: 45.5px;
   cursor: pointer;
-  outline: 1px dashed black;
+  outline: 2px solid black;
   
 }
-
+/* When user clicks cells */
 .cell-clicked {
   background-color: rgb(123, 228, 132);
   cursor: not-allowed;
 }
-
+/* cells containing bombs */
 .cell-bomb {
   background-color: rgb(241, 117, 78);
   background-image: url('./images/bomb.png');
@@ -106,6 +113,7 @@ h2 {
   gap: 16px;
 }
 
+/* Win screen */
 .win {
   background-color: rgba(78, 241, 124, 0.7);
 }
@@ -116,6 +124,7 @@ h2 {
   text-transform: uppercase;
 }
 
+/* Play again button */
 .btn {
   font-size: 24px;
   font-family: 'Darker Grotesque', sans-serif;
@@ -125,11 +134,12 @@ h2 {
   border: 2px solid rgb(0, 23, 50);
 }
 
+/* play againg button cursor transformation */
 .btn:hover {
   background-color: rgb(203, 224, 221);
 }
 
-/* # Utilities */
+/* # Utilities overlay */
 
 .hidden {
   display: none;
