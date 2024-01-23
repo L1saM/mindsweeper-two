@@ -5,14 +5,15 @@
 // Select the relevant elements from the page
 const grid = document.querySelector('.grid');
 const scoreCounter = document.querySelector('.score-counter');
-
 const endGameScreen = document.querySelector('.end-game-screen');
 const endGameText = document.querySelector('.end-game-text');
 const playAgainButton = document.querySelector('.play-again');
 
 // Initialise the variables needed for the game setup
 const totalCells = 100;
-const totalBombs = 20;
+//Number of bombs in the grid
+const totalBombs = 25;
+// Total number of blank spaces + bombs present. 
 const maxScore = totalCells - totalBombs;
 const bombsList = [];
 
@@ -27,20 +28,20 @@ while (bombsList.length < totalBombs) {
   if (!bombsList.includes(randomNumber)) bombsList.push(randomNumber);
 }
 
-console.log(bombsList);
+// console.log(bombsList);
 
 //*--------------------------
 //* GRID AND GAME LOGIC
 //*--------------------------
 
 for (let i = 1; i <= totalCells; i++) {
-  // Create a cell
+  // Creating a cell
   const cell = document.createElement('div');
   cell.classList.add('cell');
 
   // Manage the "click" event for the cell
   cell.addEventListener('click', function () {
-    // Don't do anything if it is already clicked
+    // Doesn't do anything if has already been clicked
     if (cell.classList.contains('cell-clicked')) return;
 
     if (bombsList.includes(i)) {
@@ -52,7 +53,7 @@ for (let i = 1; i <= totalCells; i++) {
     }
   });
 
-  // Put the cell in the grid
+  // Puts the cell in the grid
   grid.appendChild(cell);
 }
 
@@ -67,6 +68,7 @@ function updateScore() {
   if (score === maxScore) endGame(true);
 }
 
+//Shows all the bombs present on the grid
 function revealAllBombs() {
   // Get all of the cells from the page
   const cells = document.querySelectorAll('.cell');
@@ -96,6 +98,7 @@ function endGame(isVictory) {
 //* PLAY AGAIN
 //* --------------------
 
+//Listens for button to be clicked to reload the game and begin again.
 playAgainButton.addEventListener('click', function () {
   window.location.reload();
 });
