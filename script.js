@@ -4,9 +4,13 @@
 
 // Select the relevant elements from the page
 const grid = document.querySelector('.grid');
+//Keeps track of player score
 const scoreCounter = document.querySelector('.score-counter');
+//Ends game screen pop up
 const endGameScreen = document.querySelector('.end-game-screen');
+//Text for end game screen pop up
 const endGameText = document.querySelector('.end-game-text');
+//Button to play game again 
 const playAgainButton = document.querySelector('.play-again');
 
 // Initialise the variables needed for the game setup
@@ -27,8 +31,6 @@ while (bombsList.length < totalBombs) {
   // Add the number to the list if not already included
   if (!bombsList.includes(randomNumber)) bombsList.push(randomNumber);
 }
-
-// console.log(bombsList);
 
 //*--------------------------
 //* GRID AND GAME LOGIC
