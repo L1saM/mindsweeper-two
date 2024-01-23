@@ -1,0 +1,136 @@
+
+/* # stylesheet */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 25px;
+  font-family: 'Darker Grotesque', sans-serif;
+  line-height: 1.5;
+  color: rgb(246, 248, 249);
+  background-color: rgb(189, 138, 195);
+}
+
+.game-container {
+  width: calc(480px + 4px);
+}
+
+/* # Game Panel */
+
+h1 {
+  font-size: 58px;
+  outline: 8px dotted rgb(34, 6, 37);
+  text-align: center;
+  padding-bottom: 3px;
+  text-shadow: 10px 10px 10px rgb(34, 6, 37) ;
+  
+}
+
+h2 {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  text-shadow: 6px 6px 6px rgb(34, 6, 37) ;
+  padding-bottom: 10px;
+  
+
+}
+
+.score {
+  display: flex;
+  justify-content: space-between;
+  font-size: 35px;
+  text-shadow: 8px 8px 8px rgb(34, 6, 37) ;
+  outline: 2px dashed  rgb(34, 6, 37);
+  padding-bottom: 10px;
+  padding-left: 4px;
+  padding-right: 10px;
+}
+
+/* # Game Grid */
+
+.game-board {
+  border: 2px solid rgb(0, 0, 0);
+  position: relative;
+  
+}
+
+.grid {
+  height: calc((48px * 10) + 4px);
+  display: flex;
+  flex-wrap: wrap;
+
+  
+}
+
+.cell {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  outline: 1px dashed black;
+  
+}
+
+.cell-clicked {
+  background-color: rgb(123, 228, 132);
+  cursor: not-allowed;
+}
+
+.cell-bomb {
+  background-color: rgb(241, 117, 78);
+  background-image: url('./images/bomb.png');
+  background-size: contain;
+  cursor: not-allowed;
+}
+
+/* # Game over */
+
+.end-game-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(241, 117, 78, 0.7);
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
+}
+
+.win {
+  background-color: rgba(78, 241, 124, 0.7);
+}
+
+.end-game-text {
+  font-size: 48px;
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
+}
+
+.btn {
+  font-size: 24px;
+  font-family: 'Darker Grotesque', sans-serif;
+  padding: 4px 20px 8px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 2px solid rgb(0, 23, 50);
+}
+
+.btn:hover {
+  background-color: rgb(203, 224, 221);
+}
+
+/* # Utilities */
+
+.hidden {
+  display: none;
+}
