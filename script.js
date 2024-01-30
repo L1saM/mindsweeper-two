@@ -18,9 +18,9 @@ const totalCells = 100;
 //Number of bombs in the grid
 const totalBombs = 25;
 // Total number of blank spaces + bombs present. 
-const maxScore = totalCells - totalBombs;
+// const maxScore = totalCells - totalBombs;
 //OR Have the option to let the user win after only evading a certain amount of bombs
-// const maxScore = 20;
+const maxScore = 5;
 const bombsList = [];
 
 let score = 0;
